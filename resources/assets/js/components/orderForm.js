@@ -236,6 +236,6 @@ class Layout extends Component {
   }
 }
 
-const ordersForm = document.getElementById('ordersForm')
+const orderForm = document.getElementById('orderForm')
 
-ReactDOM.render(<Layout />, ordersForm)
+ReactDOM.render(<Layout />, orderForm)
