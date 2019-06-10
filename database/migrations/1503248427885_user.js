@@ -15,7 +15,8 @@ class UserSchema extends Schema {
   }
 
   down () {
-    this.drop('users')
+    this.raw(
+      `DROP TABLE users`)
   }
 }
 
