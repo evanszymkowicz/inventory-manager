@@ -21,10 +21,10 @@ Route.get("/", "PageControlller.index");
 Route.get("/admin", "Admin/DashboardController.index");
 
 //API
-Route.get("api/admin/products", "Admin/ProductController.sendAllProducts");
+Route.get("api/admin/products", "Admin/ProductController.sendAllproducts");
 Route.post("api/admin/products", "Admin/OrderController.store");
 
-// Admin/Products
+// Admin/products
 Route.get("/admin/products", "Admin/ProductController.index");
 Route.post("/admin/products", "Admin/ProductController.store");
 Route.get("/admin/products/create", "Admin/ProductController.create");
