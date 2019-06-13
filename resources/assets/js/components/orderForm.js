@@ -3,9 +3,9 @@ import ReactDom from "react-dom";
 import update from "react-addons-update";
 import Popup from "./Popup.js";
 import axios from "axios";
-
-var UsaState = require("usa-states").UsaStates;
-var international = require("international").all;
+//external data:
+var UsaStates = require("usa-states").UsaStates;
+var countries = require("country-list").all;
 
 class Layout extends Component {
   constructor () {
@@ -17,7 +17,7 @@ class Layout extends Component {
         address: '',
         address_2: '',
         city: '',
-        state: 'NY',
+        state: 'AL',
         country: 'US',
         zipcode: '',
         payment_type: 'paypal'
@@ -28,9 +28,12 @@ class Layout extends Component {
     }
     this.submitForm = this.submitForm.bind(this)
   }
+
+  //drop this in so that getAllProducts will run on launch
   componentWillMount(){
     this.getAllProducts()
   }
+  // bootstrapped from axios documentation but wrapped with async and try/catch
   async getAllProducts(){
     try{
       let allProducts = await axios.get('/api/admin/products')
@@ -80,8 +83,10 @@ class Layout extends Component {
   showCountries = () => {
     var allCountries = countries.getData();
 
-    return allCountries.map((item) =>
-      <option key={item.code} value={item.code}>{item.name}</option>)
+    // return allCountries.map((item) =>
+    //   <option
+    //     key={item.code}
+    //     value={item.code}>{item.name}</option>)
     console.log(allCountries)
   }
   removeItem = (index) => {
@@ -94,7 +99,7 @@ class Layout extends Component {
     this.setState(newState)
   }
   showAllItems = () =>{
-    console.log('allitems test')
+    console.log('testing')
     let randomKey = function () {
       let randomNumber = '_' + Math.random().toString(36).substr(2, 9)
       randomNumber += 3
@@ -148,9 +153,9 @@ class Layout extends Component {
           }
         console.log(submit)
       } catch(error) {
-        console.log('======ERROR SUBMITING FORM================')
+        console.log('======ERROR SUBMITING THE FORM================')
         console.log(error)
-        console.log('======ERROR================')
+        console.log('======ERROR!================')
       }
   }
   render () {

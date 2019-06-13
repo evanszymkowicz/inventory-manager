@@ -8,7 +8,7 @@ const VENDOR_LIBS = [
 module.exports = {
   entry: {
     //custom adjustments to the webpack
-    orderForm: './resources/assets/js/comp/orderForm.js',
+    orderForm: './resources/assets/js/components/orderForm.js',
     // regularJS: './assets/js/regularJS.js',
     vendor: VENDOR_LIBS
   },

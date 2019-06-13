@@ -17,7 +17,7 @@
 const Route = use("Route");
 
 //custom routes
-Route.get("/", "PageControlller.index");
+Route.get("/", "PageController.index");
 Route.get("/admin", "Admin/DashboardController.index");
 
 //API

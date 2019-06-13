@@ -21,8 +21,9 @@ First Commit: Just atom/git nonsense </br>
 View layer: Bringing in a bootstrapped UI </br>
 Migrations: Controllers in Http/Admin and the view layer </br>
 Webpack: Added .babelrc, gulpfile. Edited Package.json. Added React components </br>
-Data-migrations: New branch. Adonis uses KnexJS to help with SQL Schema. `adonis make:migration[name]` loads one into src/database/migrations </br>
--also upgraded axios to patch security issue< /br>
+Migrations: New branch. Adonis uses KnexJS to help with SQL Schema. `adonis make:migration[name]` loads one into src/database/migrations </br>
+	-also upgraded axios to patch security issue< /br>
+cleanup/debug: The usual. Would like to go back and take out unused UI pages, but it keeps crashing Atom. </br>
 
 ## List of Migrations:
 
@@ -40,3 +41,4 @@ AddZipCodeToOrders </br>
 AddForeignKey </br>
 
 I need to go back and debug these, wanted to get them up first though.
+`npm install sqlstring`
