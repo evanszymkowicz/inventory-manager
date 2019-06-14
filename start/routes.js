@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 /*
 |--------------------------------------------------------------------------
@@ -14,15 +14,39 @@
 */
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
-const Route = use('Route')
+const Route = use("Route");
 
 //custom routes
-Route.get('/', 'PageControlller.index')
+Route.get("/", "PageControlller.index");
+Route.get("/admin", "Admin/DashboardController.index");
 
-Route.get('/admin/products', 'Admin/ProductController.index')
-Route.post('/admin/products', 'Admin/ProductController.store') //product page route (post route)
-Route.get('/admin/products/create', 'Admin/ProductController.create') //create method
-Route.get('/admin/products/:id', 'Admin/ProductController.show') //ID to name and locate products
-Route.get('/admin/products/:id/edit', 'Admin/ProductController.edit') //edit products
-Route.put('/admin/products/:id/edit', 'Admin/ProductController.update') //Put request, submits form to the URL
-Route.delete('/admin/products/:id/delete', 'Admin/ProductController.delete') //delete products
+//API
+Route.get("api/admin/products", "Admin/ProductController.sendAllProducts");
+Route.post("api/admin/products", "Admin/OrderController.store");
+
+// Admin/Products
+Route.get("/admin/products", "Admin/ProductController.index");
+Route.post("/admin/products", "Admin/ProductController.store");
+Route.get("/admin/products/create", "Admin/ProductController.create");
+Route.get("/admin/products/:id", "Admin/ProductController.show");
+Route.get("/admin/products/:id/edit", "Admin/ProductController.edit");
+Route.put("/admin/products/:id", "Admin/ProductController.update");
+Route.get("/admin/products/:id/delete", "Admin/ProductController.delete");
+
+// Admin/Brands
+Route.get("/admin/brands", "Admin/BrandController.index");
+Route.post("/admin/brands", "Admin/BrandController.store");
+Route.get("/admin/brands/create", "Admin/BrandController.create");
+Route.get("/admin/brands/:id", "Admin/BrandController.show");
+Route.get("/admin/brands/:id/edit", "Admin/BrandController.edit");
+Route.put("/admin/brands/:id", "Admin/BrandController.update");
+Route.get("/admin/brands/:id/delete", "Admin/BrandController.delete");
+
+// Admin/Orders
+Route.get("/admin/orders", "Admin/OrderController.index");
+Route.post("/admin/orders", "Admin/OrderController.store");
+Route.get("/admin/orders/create", "Admin/OrderController.create");
+Route.get("/admin/orders/:id", "Admin/OrderController.show");
+Route.get("/admin/orders/:id/edit", "Admin/OrderController.edit");
+Route.put("/admin/orders/:id", "Admin/OrderController.update");
+Route.get("/admin/orders/:id/delete", "Admin/OrderController.delete");
