@@ -17,14 +17,14 @@
 const Route = use("Route");
 
 //custom routes
-Route.get("/", "PageControlller.index");
-Route.get("/admin", "Admin/DashboardController.index");
+Route.get("/", "Admin/OrderController.index");
+Route.get("/admin", "Admin/OrderController.index");
 
 //API
 Route.get("api/admin/products", "Admin/ProductController.sendAllproducts");
 Route.post("api/admin/products", "Admin/OrderController.store");
 
-// Admin/products
+// Admin/Products
 Route.get("/admin/products", "Admin/ProductController.index");
 Route.post("/admin/products", "Admin/ProductController.store");
 Route.get("/admin/products/create", "Admin/ProductController.create");

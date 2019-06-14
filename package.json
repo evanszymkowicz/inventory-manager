@@ -1,5 +1,5 @@
 {
-  "name": "adonis-fullstack-app",
+  "name": "evan-adonis-app",
   "version": "4.1.0",
   "adonis-version": "4.1.0",
   "description": "The fullstack application boilerplate for Adonisjs",
@@ -9,7 +9,10 @@
     "test": "node ace test",
     "watch": "gulp"
   },
-  "keywords": ["adonisjs", "adonis-app"],
+  "keywords": [
+    "adonisjs",
+    "adonis-app"
+  ],
   "author": "",
   "license": "UNLICENSED",
   "private": true,
@@ -33,7 +36,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "browser-sync": "^2.18.8",
-    "country-list": "^1.1.0",
+    "country-list": "^1.1.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-babel": "^6.1.2",
@@ -57,7 +60,7 @@
     "sqlstring": "^2.3.1",
     "standard": "^10.0.2",
     "usa-states": "0.0.5",
-    "webpack": "^2.5.1",
+    "webpack": "^2.7.0",
     "webpack-stream": "^3.2.0"
   },
   "devDependencies": {

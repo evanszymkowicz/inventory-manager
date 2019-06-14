@@ -3,7 +3,7 @@
 /** @type {import('@adonisjs/lucid/src/Schema')} */
 const Schema = use("Schema");
 
-class AddZipcodeToOrdersSchema extends Schema {
+class AddZipcodeColumnToOrdersSchema extends Schema {
   up() {
     this.raw(`
       ALTER TABLE orders
@@ -19,4 +19,4 @@ class AddZipcodeToOrdersSchema extends Schema {
   }
 }
 
-module.exports = AddZipcodeToOrdersSchema;
+module.exports = AddZipcodeColumnToOrdersSchema;

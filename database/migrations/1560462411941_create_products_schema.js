@@ -1,12 +1,12 @@
-"use strict";
+'use strict';
 
 /** @type {import('@adonisjs/lucid/src/Schema')} */
-const Schema = use("Schema");
+const Schema = use('Schema')
 
 class CreateProductsSchema extends Schema {
-  up() {
+  up () {
     this.raw(
-      `CREATE TABLE product(
+      `CREATE TABLE products(
         id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         title VARCHAR(200) NOT NULL,
         sku VARCHAR(60) NOT NULL,
@@ -17,13 +17,13 @@ class CreateProductsSchema extends Schema {
         size FLOAT UNSIGNED NOT NULL,
         user_id INT UNSIGNED NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)`
-    );
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)`)
   }
 
-  down() {
-    this.raw(`DROP TABLE product`);
+  down () {
+    this.raw(
+      `DROP TABLE products`)
   }
 }
 
-module.exports = CreateProductsSchema;
+module.exports = CreateProductsSchema

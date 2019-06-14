@@ -66,13 +66,15 @@
               </select>
             </div>
 
-
-
+              <!-- NOTE: Another loop used here to make the brands page dynamic-->
             <div class="col-sm-12 col-md-4">
               <label class="col-form-label">Brands</label>
               <select class="custom-select" name="brand_id">
                 @each(brand in brands)
-                <option value="{{brand.id}}" {{(brand.id == product.brand_id) ? 'selected="selected"' : ''}}
+                <option value="
+                  {{brand.id}}"
+                  {{(brand.id == product.brand_id) ? 'selected="selected"' : ''
+                  }}
                  >{{brand.title}}</option>
                 @endeach
               </select>

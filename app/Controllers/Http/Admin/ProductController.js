@@ -1,8 +1,13 @@
 "use strict";
 const Database = use("Database");
 const sanitize = use("sqlstring");
+//sanatize variable is assigned to all values to prevent SQL injection
+
+//NOTE: console.log(error);
+// return response.redirect("back"); at the end of each try/catch will send user back one page if an error
 
 class ProductController {
+  // First of 8 (Index)
   async index({ view, request, response }) {
     try {
       let allProducts = await Database.raw(`
@@ -19,13 +24,16 @@ class ProductController {
         ORDER BY created_at ASC
       `);
       allProducts = allProducts[0];
-
-      return view.render("admin/products/all", { allProducts });
+      return allProducts
+      // return view.render("admin/products/all", { allProducts }); //now have access to all the products from the view layer
+      //return view.render('admin/products/all', {})
+      //This probably didn't need to be done this way, but trying to make the view work nicely
     } catch (error) {
       console.log(error);
       return response.redirect("back");
     }
   }
+  // Second of 8 (store data)
   async store({ request, response }) {
     try {
       const post = request.post();
@@ -48,6 +56,7 @@ class ProductController {
       return response.redirect("back");
     }
   }
+  // Third of 8 (Create new)
   async create({ view, request, response }) {
     let brands = await Database.raw(`
       SELECT * FROM brands
@@ -56,6 +65,12 @@ class ProductController {
     brands = brands[0];
     return view.render("admin/products/create", { brands });
   }
+
+  // // Fourth of 8 (Show products)
+
+  // NOTE: There was an error in here which might explain why it wasn't working earlier
+  // NOTE: Use params.id because that's what the other values join on.
+
   async show({ view, request, response, params }) {
     try {
       let product = await Database.raw(`
@@ -73,17 +88,20 @@ class ProductController {
         ORDER BY created_at ASC
         LIMIT 1
       `);
+      //return product[0][0];
       product = product[0][0];
 
       return view.render("admin/products/show", { product });
     } catch (error) {
       console.log(error);
       return response.redirect("back");
-      // `<h1 style="color: red">there was an error</h1>
+      // `<h1 style="color: red">error</h1>
       // <h3>${error.sqlMessage}</h3>
       // `
     }
   }
+  // Fifth of 8 ( first part of edit/update products)
+
   async edit({ view, request, response, params }) {
     try {
       let product = await Database.raw(`
@@ -113,11 +131,12 @@ class ProductController {
     } catch (error) {
       console.log(error);
       return response.redirect("back");
-      // `<h1 style="color: red">there was an error</h1>
+      // `<h1 style="color: red">There was an error, please try again.</h1>
       // <h3>${error.sqlMessage}</h3>
       // `
     }
   }
+  // Sixth of 8 (second part of edit/update products)
   async update({ request, response, params }) {
     try {
       const id = params.id;
@@ -144,7 +163,7 @@ class ProductController {
       return response.redirect("back");
     }
   }
-
+  // Seventh of 8 (delete a product from the DB)
   async delete({ request, response, params }) {
     try {
       const id = params.id;
@@ -159,7 +178,8 @@ class ProductController {
       return response.redirect("back");
     }
   }
-
+  // Eigth of 8 (Call all)
+  // Modified POST request
   async sendAllProducts({ view, request, response }) {
     try {
       let allProducts = await Database.raw(`
@@ -177,7 +197,7 @@ class ProductController {
       `);
       allProducts = allProducts[0];
 
-      return allProducts;
+      return allProducts; //this in lieu of return POST
     } catch (error) {
       console.log(error);
       return response.redirect("back");

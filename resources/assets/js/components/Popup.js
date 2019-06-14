@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactDom from "react-dom";
 import update from "react-addons-update";
-
+//external data:
 var UsaStates = require("usa-states").UsaStates;
 var countries = require("country-list")();
 
@@ -73,7 +73,7 @@ export default class Popup extends Component {
       )
     } else{
       return (<option key={`no value`} value={`none`}>
-        Please choose a product thats available
+        Sorry, please choose a pair currently in stock.
       </option>)
     }
 
@@ -98,11 +98,11 @@ export default class Popup extends Component {
         <div className="container-box">
           <div className="row">
             <div className="col-md-12">
-              <h2>Add Item to Order</h2>
+              <h2>Add Items to The Order</h2>
               <div className="form-group">
                 <label htmlFor="">Product</label>
                 <select className="custom-select" name="product" value={this.state.form.product} onChange={this.change}>
-                  <option value="none">Select A Sneaker</option>
+                  <option value="none">Select a Shoe</option>
                   {this.showProducts()}
                 </select>
               </div>
@@ -114,10 +114,10 @@ export default class Popup extends Component {
                 </select>
               </div>
               <div className="add-btn btn btn-primary mb-3" onClick={this.clickedSaveItemBtn}>
-                save item
+                Save
               </div>
               <div className="add-btn btn btn-danger mb-3" onClick={this.clickedCancelBtn}>
-                cancel
+                Cancel
               </div>
             </div>
           </div>
