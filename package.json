@@ -60,7 +60,7 @@
     "sqlstring": "^2.3.1",
     "standard": "^10.0.2",
     "usa-states": "0.0.5",
-    "webpack": "^2.5.1",
+    "webpack": "^2.7.0",
     "webpack-stream": "^3.2.0"
   },
   "devDependencies": {

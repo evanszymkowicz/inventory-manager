@@ -70,6 +70,7 @@ class ProductController {
 
   // NOTE: There was an error in here which might explain why it wasn't working earlier
   // NOTE: Use params.id because that's what the other values join on.
+  
   async show({ view, request, response, params }) {
     try {
       let product = await Database.raw(`
