@@ -121,6 +121,9 @@ class ProductController {
       `);
       product = product[0][0];
 
+      // NOTE: This block here is meant to give dynamic functionality
+      // to the brand drop down. Will only list them in the UI dropdown if they appear in the DB first
+      // and then fills in as an option using State.
       let brands = await Database.raw(`
         SELECT * FROM brands
         ORDER BY brands.title ASC
