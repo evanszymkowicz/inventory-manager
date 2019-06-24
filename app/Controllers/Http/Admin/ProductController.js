@@ -20,7 +20,7 @@ class ProductController {
       `)
       allProducts = allProducts[0]
 
-      return view.render('admin/product/all', {allProducts})
+      return view.render('admin/products/all', {allProducts})
     } catch (error){
       console.log(error)
       return response.redirect('back')
@@ -43,7 +43,7 @@ class ProductController {
         ${parseInt(1)})
       `)
 
-      return response.redirect('/admin/product')
+      return response.redirect('/admin/products')
     } catch (error){
       console.log(error)
       return response.redirect('back')
@@ -55,7 +55,7 @@ class ProductController {
       ORDER BY brands.title ASC
     `)
     brands = brands[0]
-    return view.render('admin/product/create', {brands})
+    return view.render('admin/products/create', {brands})
   }
   async show({view, request, response, params}){
     try {
@@ -76,7 +76,7 @@ class ProductController {
       `)
       product = product[0][0]
 
-      return view.render('admin/product/show', {product})
+      return view.render('admin/products/show', {product})
     } catch (error){
       console.log(error)
       return response.redirect('back')
@@ -108,7 +108,7 @@ class ProductController {
       brands = brands[0]
 
 
-      return view.render('admin/product/edit', {product, brands})
+      return view.render('admin/products/edit', {product, brands})
     } catch (error){
       console.log(error)
       return response.redirect('back')
@@ -134,7 +134,7 @@ class ProductController {
         WHERE id = ${id}
       `)
 
-      return response.redirect(`/admin/product/${id}`)
+      return response.redirect(`/admin/products/${id}`)
     } catch (error){
       console.log(error)
       return response.redirect('back')
@@ -149,7 +149,7 @@ class ProductController {
         WHERE id = ${id}
       `)
 
-      return response.redirect(`/admin/product`)
+      return response.redirect(`/admin/products`)
     } catch (error){
       console.log(error)
       return response.redirect('back')

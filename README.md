@@ -21,3 +21,10 @@ First Commit: Just atom/git nonsense </br>
 View layer: Bringing in a bootstrapped UI</br>
 Migrations: Controllers in Http/Admin and the view layer</br>
 Webpack: Added .babelrc, gulpfile. Edited Package.json. Added React components</br>
+
+## Action Shots (no data populated):
+
+![Dashboard](public/images/screencaps/Dashboard.png)
+![InventoryList](public/images/screencaps/InventoryList.png)
+![addinventory](public/images/screencaps/addinventory.png)
+![allorders](public/images/screencaps/allorders.png)

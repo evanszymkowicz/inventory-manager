@@ -73,7 +73,7 @@ export default class Popup extends Component {
       )
     } else{
       return (<option key={`no value`} value={`none`}>
-        Please choose a product thats available
+        Please choose a product that is currently in stock!
       </option>)
     }
 
