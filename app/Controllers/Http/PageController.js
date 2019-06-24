@@ -2,7 +2,7 @@
 
 class PageController {
 	index() {
-		return 'This is the PageController'
+		return 'Startup successful!'
 	}
 }
 

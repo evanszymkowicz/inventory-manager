@@ -17,21 +17,21 @@
 const Route = use("Route");
 
 //custom routes
-Route.get("/", "PageControlller.index");
-Route.get("/admin", "Admin/DashboardController.index");
+Route.get("/", "OrderController.index");
+Route.get("/admin", "Admin/OrderController.index");
 
 //API
-Route.get("api/admin/products", "Admin/ProductController.sendAllProducts");
-Route.post("api/admin/products", "Admin/OrderController.store");
+Route.get("api/admin/product", "Admin/ProductController.sendAllProducts");
+Route.post("api/admin/product", "Admin/OrderController.store");
 
-// Admin/Products
-Route.get("/admin/products", "Admin/ProductController.index");
-Route.post("/admin/products", "Admin/ProductController.store");
-Route.get("/admin/products/create", "Admin/ProductController.create");
-Route.get("/admin/products/:id", "Admin/ProductController.show");
-Route.get("/admin/products/:id/edit", "Admin/ProductController.edit");
-Route.put("/admin/products/:id", "Admin/ProductController.update");
-Route.get("/admin/products/:id/delete", "Admin/ProductController.delete");
+// admin/product
+Route.get("/admin/product", "Admin/ProductController.index");
+Route.post("/admin/product", "Admin/ProductController.store");
+Route.get("/admin/product/create", "Admin/ProductController.create");
+Route.get("/admin/product/:id", "Admin/ProductController.show");
+Route.get("/admin/product/:id/edit", "Admin/ProductController.edit");
+Route.put("/admin/product/:id", "Admin/ProductController.update");
+Route.get("/admin/product/:id/delete", "Admin/ProductController.delete");
 
 // Admin/Brands
 Route.get("/admin/brands", "Admin/BrandController.index");

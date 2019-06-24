@@ -39,7 +39,7 @@
 								<tr>
 									<th scope="row">{{product.id}}</th>
 									<td>
-										<a href="/admin/products/{{product.id}}">
+										<a href="/admin/product/{{product.id}}">
 											{{product.title}}
 										</a>
 									</td>
@@ -64,11 +64,11 @@
 									<td>
 										<ul class="d-flex justify-content-center">
 											<li class="mr-3">
-												<a href="/admin/products/{{product.id}}/edit" class="text-secondary">
+												<a href="/admin/product/{{product.id}}/edit" class="text-secondary">
 													<i class="fa fa-edit"></i>
 												</a></li>
 											<li>
-												<a href="/admin/products/{{product.id}}/delete" class="text-danger" onclick="return confirm('Are you sure?')">
+												<a href="/admin/product/{{product.id}}/delete" class="text-danger" onclick="return confirm('Are you sure?')">
 							<i class="ti-trash"></i>
 						</a>
 					</li>

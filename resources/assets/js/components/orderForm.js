@@ -33,7 +33,7 @@ class Layout extends Component {
   }
   async getAllProducts(){
     try{
-      let allProducts = await axios.get('/api/admin/products')
+      let allProducts = await axios.get('/api/admin/product')
       allProducts = allProducts.data
       console.log(allProducts)
       this.setState({
@@ -132,7 +132,7 @@ class Layout extends Component {
     var self = window
     try{
       const csrf = document.getElementsByName("_csrf")[0].value
-        var submit = await axios.post('/api/admin/products', {
+        var submit = await axios.post('/api/admin/product', {
           _csrf: csrf,
           form: this.state.form,
           allItems: this.state.allItems
@@ -155,7 +155,7 @@ class Layout extends Component {
   }
   render () {
     return (
-      <form action="/admin/products" method="post" >
+      <form action="/admin/product" method="post" >
         <div className="row form-group">
           <div className="col-sm-12 col-md-6">
             <label htmlFor="example-text-input" className="col-form-label">First Name</label>

@@ -9,8 +9,11 @@
     "test": "node ace test",
     "watch": "gulp"
   },
-  "keywords": ["adonisjs", "adonis-app"],
-  "author": "",
+  "keywords": [
+    "adonisjs",
+    "adonis-app"
+  ],
+  "author": "Evan Szymkowicz",
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {

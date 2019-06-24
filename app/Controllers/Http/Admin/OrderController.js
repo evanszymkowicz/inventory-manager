@@ -109,10 +109,6 @@ class OrderController {
     }
   }
   async create({ view, request, response }) {
-    // let brands = await Database.raw(`
-    //   SELECT * FROM brands
-    //   ORDER BY brands.title ASC
-    // `)
     let brands = "";
     return view.render("admin/orders/create", { brands });
   }
@@ -154,9 +150,6 @@ class OrderController {
     } catch (error) {
       console.log(error);
       return response.redirect("back");
-      // `<h1 style="color: red">there was an error</h1>
-      // <h3>${error.sqlMessage}</h3>
-      // `
     }
   }
   async edit({ view, request, response, params }) {
@@ -188,9 +181,6 @@ class OrderController {
     } catch (error) {
       console.log(error);
       return response.redirect("back");
-      // `<h1 style="color: red">there was an error</h1>
-      // <h3>${error.sqlMessage}</h3>
-      // `
     }
   }
   async update({ request, response, params }) {
